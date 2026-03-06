@@ -1,10 +1,5 @@
-import { FiDroplet, FiTwitter, FiLinkedin, FiFacebook, FiInstagram, FiArrowUp } from 'react-icons/fi'
-
-const footerLinks = {
-    Solutions: ['Water Treatment', 'Filtration Systems', 'Desalination', 'Smart Monitoring'],
-    Company: ['About Us', 'Careers', 'News', 'Sustainability'],
-    Resources: ['Case Studies', 'White Papers', 'Documentation', 'Blog'],
-}
+import { FiTwitter, FiLinkedin, FiFacebook, FiInstagram, FiArrowUp } from 'react-icons/fi'
+import { FOOTER_CONTENT } from '../constants'
 
 export default function Footer() {
     return (
@@ -20,11 +15,11 @@ export default function Footer() {
                                 className="h-10 w-auto rounded-lg shadow-lg shadow-teal-500/10"
                             />
                             <span className="text-white font-bold text-xl font-['Outfit']">
-                                Precise <span className="text-teal-400">WaterTek</span>
+                                {FOOTER_CONTENT.brandName} <span className="text-teal-400">{FOOTER_CONTENT.brandHighlight}</span>
                             </span>
                         </div>
                         <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-6">
-                            Pioneering advanced water technology solutions for a sustainable, water-secure future. Trusted by industries across 30+ countries.
+                            {FOOTER_CONTENT.description}
                         </p>
                         <div className="flex gap-3">
                             {[FiTwitter, FiLinkedin, FiFacebook, FiInstagram].map((Icon, i) => (
@@ -40,7 +35,7 @@ export default function Footer() {
                     </div>
 
                     {/* Links */}
-                    {Object.entries(footerLinks).map(([category, links]) => (
+                    {Object.entries(FOOTER_CONTENT.links).map(([category, links]) => (
                         <div key={category}>
                             <h4 className="text-white font-semibold text-sm mb-4 tracking-wide">{category}</h4>
                             <ul className="space-y-2.5">
@@ -62,7 +57,7 @@ export default function Footer() {
                 {/* Bottom bar */}
                 <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <p className="text-white/30 text-xs">
-                        © 2025 Precise WaterTek. All rights reserved.
+                        {FOOTER_CONTENT.copyright}
                     </p>
                     <div className="flex gap-6">
                         <a href="#" className="text-white/30 hover:text-white/60 text-xs transition-colors">Privacy Policy</a>
@@ -80,3 +75,4 @@ export default function Footer() {
         </footer>
     )
 }
+

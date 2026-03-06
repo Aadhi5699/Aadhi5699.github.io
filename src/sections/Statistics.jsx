@@ -1,51 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import CountUp from 'react-countup'
-
-const stats = [
-    {
-        value: 100,
-        suffix: '%',
-        label: 'Technical Accuracy',
-        sublabel: 'Precision-focused engineering approach',
-        decimal: 0,
-    },
-    {
-        value: 95,
-        suffix: '%',
-        label: 'Water Reclamation',
-        sublabel: 'Achieving industry-leading reuse rates',
-        decimal: 0,
-    },
-    {
-        value: 11,
-        suffix: '+',
-        label: 'Industrial Sectors',
-        sublabel: 'Diverse expertise across disciplines',
-        decimal: 0,
-    },
-    {
-        value: 100,
-        suffix: '%',
-        label: 'Operational Efficiency',
-        sublabel: 'Optimized process & design cycles',
-        decimal: 0,
-    },
-    {
-        value: 2,
-        suffix: '',
-        label: 'Global Regions',
-        sublabel: 'Projects in India, UAE',
-        decimal: 0,
-    },
-    {
-        value: 2,
-        suffix: 'Hr',
-        label: 'Responsive Support',
-        sublabel: 'Average response time for queries',
-        decimal: 0,
-    },
-]
+import { STATISTICS_CONTENT } from '../constants'
 
 function StatCard({ stat, index }) {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 })
@@ -114,20 +70,17 @@ export default function Statistics() {
                     className="text-center"
                 >
                     <span className="inline-block px-4 py-1.5 bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold rounded-full uppercase tracking-widest mb-5">
-                        Our Impact
+                        {STATISTICS_CONTENT.badge}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold font-['Outfit'] text-white mb-4">
-                        Precision Meets
-                        <span className="gradient-text"> Performance</span>
+                        {STATISTICS_CONTENT.titleMain}
+                        <span className="gradient-text">{STATISTICS_CONTENT.titleHighlight}</span>
                     </h2>
-                    {/* <p className="text-white/55 max-w-xl mx-auto text-base">
-                        Dedicated to reliable and sustainable engineering solutions, supporting complex projects with high-tier technical expertise.
-                    </p> */}
                 </motion.div>
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {stats.map((stat, i) => (
+                    {STATISTICS_CONTENT.stats.map((stat, i) => (
                         <StatCard key={stat.label} stat={stat} index={i} />
                     ))}
                 </div>
@@ -135,4 +88,5 @@ export default function Statistics() {
         </section>
     )
 }
+
 

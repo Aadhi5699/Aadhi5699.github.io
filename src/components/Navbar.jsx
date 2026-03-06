@@ -1,14 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiDroplet, FiMenu, FiX } from 'react-icons/fi'
-
-const navLinks = [
-    { label: 'Solutions', href: '#solutions' },
-    { label: 'Technology', href: '#technology' },
-    { label: 'Impact', href: '#impact' },
-    { label: 'Case Studies', href: '#case-studies' },
-    { label: 'Contact', href: '#contact' },
-]
+import { FiMenu, FiX } from 'react-icons/fi'
+import { NAV_LINKS } from '../constants'
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)
@@ -50,7 +43,7 @@ export default function Navbar() {
 
                 {/* Desktop Links */}
                 <div className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
+                    {NAV_LINKS.map((link) => (
                         <a
                             key={link.label}
                             href={link.href}
@@ -92,7 +85,7 @@ export default function Navbar() {
                         className="md:hidden bg-[#0a1628]/95 backdrop-blur-xl border-t border-white/10"
                     >
                         <div className="flex flex-col px-6 py-4 gap-4">
-                            {navLinks.map((link) => (
+                            {NAV_LINKS.map((link) => (
                                 <a
                                     key={link.label}
                                     href={link.href}
@@ -116,3 +109,4 @@ export default function Navbar() {
         </motion.nav>
     )
 }
+

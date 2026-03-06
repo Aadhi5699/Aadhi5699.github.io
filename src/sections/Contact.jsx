@@ -1,27 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
-
-const contactInfo = [
-    {
-        icon: FiMail,
-        label: 'Email',
-        value: 'precisewatertek@gmail.com',
-        href: 'mailto:precisewatertek@gmail.com',
-    },
-    {
-        icon: FiPhone,
-        label: 'Phone',
-        value: '+91-9003165948',
-        href: 'tel:+919003165948',
-    },
-    {
-        icon: FiMapPin,
-        label: 'Headquarters',
-        value: 'Chennai, Tamil Nadu, India',
-        href: '#',
-    },
-]
+import { CONTACT_CONTENT } from '../constants'
 
 export default function Contact() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -57,11 +36,11 @@ export default function Contact() {
                     className="text-center"
                 >
                     <span className="inline-block px-4 py-1.5 bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold rounded-full uppercase tracking-widest mb-5">
-                        Contact Us
+                        {CONTACT_CONTENT.badge}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold font-['Outfit'] text-white mb-4">
-                        Let's Build a
-                        <span className="gradient-text"> Water-Secure Future</span>
+                        {CONTACT_CONTENT.titleMain}
+                        <span className="gradient-text">{CONTACT_CONTENT.titleHighlight}</span>
                     </h2>
                 </motion.div>
 
@@ -75,9 +54,9 @@ export default function Contact() {
                     >
                         {/* Info panel */}
                         <div className="glass-card p-10">
-                            <h3 className="text-white font-semibold text-2xl mb-8 font-['Outfit'] text-center">Get in Touch</h3>
+                            <h3 className="text-white font-semibold text-2xl mb-8 font-['Outfit'] text-center">{CONTACT_CONTENT.panelTitle}</h3>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                {contactInfo.map((item) => (
+                                {CONTACT_CONTENT.info.map((item) => (
                                     <a key={item.label} href={item.href} className="flex flex-col items-center text-center gap-4 group">
                                         <div className="w-14 h-14 rounded-2xl bg-teal-500/15 border border-teal-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-teal-500/25 transition-all duration-300 group-hover:scale-110">
                                             <item.icon className="text-teal-400" size={24} />
@@ -91,7 +70,7 @@ export default function Contact() {
                             </div>
                         </div>
 
-                        {/* Status card */}
+                        {/* Status card - Kept as comment for reference if needed */}
                         {/*  <div className="glass-card p-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
                             <div className="flex items-center gap-3">
                                 <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
@@ -106,4 +85,3 @@ export default function Contact() {
         </section>
     )
 }
-

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FiArrowRight, FiPlay } from 'react-icons/fi'
+import { HERO_CONTENT } from '../constants'
 
 export default function Hero() {
     return (
@@ -31,7 +32,7 @@ export default function Hero() {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-teal-400/30 bg-teal-500/10 backdrop-blur-sm mb-8"
                 >
                     <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-                    <span className="text-teal-300 text-sm font-medium">Leading Water Innovation Since 2025</span>
+                    <span className="text-teal-300 text-sm font-medium">{HERO_CONTENT.badge}</span>
                 </motion.div>
 
                 {/* Headline */}
@@ -41,11 +42,11 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.3 }}
                     className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-['Outfit'] leading-[1.05] tracking-tight mb-6"
                 >
-                    <span className="text-white">Pure Water.</span>
+                    <span className="text-white">{HERO_CONTENT.mainTitle.line1}</span>
                     <br />
-                    <span className="gradient-text">Precise Technology.</span>
+                    <span className="gradient-text">{HERO_CONTENT.mainTitle.line2}</span>
                     <br />
-                    <span className="text-white/80">Sustainable Future.</span>
+                    <span className="text-white/80">{HERO_CONTENT.mainTitle.line3}</span>
                 </motion.h1>
 
                 {/* Subtext */}
@@ -55,7 +56,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.5 }}
                     className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
                 >
-
+                    {HERO_CONTENT.subtext}
                 </motion.p>
 
                 {/* CTA Buttons */}
@@ -69,7 +70,7 @@ export default function Hero() {
                         href="#solutions"
                         className="group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-teal-500/30 hover:-translate-y-1 transition-all duration-300 text-base"
                     >
-                        Explore Solutions
+                        {HERO_CONTENT.ctaButtons.primary}
                         <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
                     </a>
                     <a
@@ -79,7 +80,7 @@ export default function Hero() {
                         <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                             <FiPlay className="text-teal-300 text-xs ml-0.5" />
                         </div>
-                        View Case Studies
+                        {HERO_CONTENT.ctaButtons.secondary}
                     </a>
                 </motion.div>
 
@@ -90,11 +91,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.9 }}
                     className="mt-20 flex flex-wrap items-center justify-center gap-8 md:gap-16"
                 >
-                    {[
-                        { value: '500M+', label: 'Liters Treated Daily' },
-                        { value: '30+', label: 'Countries Served' },
-                        { value: '99.9%', label: 'Purity Rate' },
-                    ].map((stat) => (
+                    {HERO_CONTENT.stats.map((stat) => (
                         <div key={stat.label} className="text-center">
                             <div className="text-3xl md:text-4xl font-bold gradient-text font-['Outfit']">{stat.value}</div>
                             <div className="text-white/45 text-sm mt-1">{stat.label}</div>
@@ -102,6 +99,7 @@ export default function Hero() {
                     ))}
                 </motion.div>
             </div>
+
 
             {/* Scroll Indicator */}
             <motion.div

@@ -1,36 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { FiMapPin, FiArrowRight, FiAward } from 'react-icons/fi'
-
-const caseStudies = [
-    {
-        title: 'Singapore NEWater Advanced Reuse Facility',
-        location: 'Singapore',
-        category: 'Municipal',
-        description: 'Designed and deployed a complete tertiary water reclamation system treating 500,000 m³/day for Singapore\'s national water reuse program.',
-        outcome: '40% reduction in water import dependency',
-        imageUrl: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&auto=format&fit=crop&q=80',
-        badge: 'Award Winning',
-    },
-    {
-        title: 'Gulf Desalination Mega-Plant',
-        location: 'UAE, Middle East',
-        category: 'Desalination',
-        description: 'Pioneered a 350 MW solar-powered reverse osmosis desalination facility delivering freshwater to 1.2 million residents.',
-        outcome: '1.2M residents supplied daily',
-        imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=80',
-        badge: 'Sustainable',
-    },
-    {
-        title: 'Rhine Industrial Water Recovery',
-        location: 'Germany, Europe',
-        category: 'Industrial',
-        description: 'Implemented closed-loop industrial wastewater recovery at Germany\'s largest chemical complex, achieving 95% water reclamation.',
-        outcome: '95% water reclamation rate',
-        imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&auto=format&fit=crop&q=80',
-        badge: 'Zero Discharge',
-    },
-]
+import { CASE_STUDIES_CONTENT } from '../constants'
 
 function CaseCard({ study, index }) {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 })
@@ -119,20 +90,20 @@ export default function CaseStudies() {
                     className="text-center mb-16"
                 >
                     <span className="inline-block px-4 py-1.5 bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold rounded-full uppercase tracking-widest mb-5">
-                        Case Studies
+                        {CASE_STUDIES_CONTENT.badge}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold font-['Outfit'] text-white mb-4">
-                        Transforming Water,
-                        <span className="gradient-text"> Globally</span>
+                        {CASE_STUDIES_CONTENT.titleMain}
+                        <span className="gradient-text">{CASE_STUDIES_CONTENT.titleHighlight}</span>
                     </h2>
                     <p className="text-white/55 max-w-xl mx-auto text-base">
-                        Real projects. Measurable impact. Explore how Precise WaterTek has solved complex water challenges across the world.
+                        {CASE_STUDIES_CONTENT.description}
                     </p>
                 </motion.div>
 
                 {/* Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {caseStudies.map((study, i) => (
+                    {CASE_STUDIES_CONTENT.caseStudies.map((study, i) => (
                         <CaseCard key={study.title} study={study} index={i} />
                     ))}
                 </div>
@@ -148,10 +119,11 @@ export default function CaseStudies() {
                         href="#"
                         className="inline-flex items-center gap-2 px-6 py-3 border border-teal-500/30 text-teal-300 text-sm font-medium rounded-xl hover:bg-teal-500/10 hover:border-teal-400/50 transition-all duration-300"
                     >
-                        View all case studies <FiArrowRight size={14} />
+                        {CASE_STUDIES_CONTENT.cta} <FiArrowRight size={14} />
                     </a>
                 </motion.div>
             </div>
         </section>
     )
 }
+

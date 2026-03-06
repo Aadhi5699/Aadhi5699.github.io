@@ -1,41 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiEdit3, FiFileText, FiActivity, FiSettings, FiArrowRight } from 'react-icons/fi'
-
-const steps = [
-    {
-        id: '01',
-        icon: FiEdit3,
-        title: 'Concept & RFQ',
-        description: 'Conceptual treatment schemes, flow balance diagrams, and scope definition for precise RFQ preparation.',
-        color: 'from-blue-500 to-cyan-400',
-        glow: 'shadow-blue-500/30',
-    },
-    {
-        id: '02',
-        icon: FiFileText,
-        title: 'Tender Engineering',
-        description: 'Technical proposal preparation, P&IDs, major BOQs, and detailed technical specifications for bidding.',
-        color: 'from-teal-500 to-cyan-500',
-        glow: 'shadow-teal-500/30',
-    },
-    {
-        id: '03',
-        icon: FiActivity,
-        title: 'Basic Engineering',
-        description: 'Treatment scheme finalization, hydraulic calculations, and comprehensive basic engineering documentation.',
-        color: 'from-cyan-500 to-teal-400',
-        glow: 'shadow-cyan-500/30',
-    },
-    {
-        id: '04',
-        icon: FiSettings,
-        title: 'Detailed Engineering',
-        description: 'Electro-mechanical engineering, GA drawings, electrical SLDs, and technical support during commissioning.',
-        color: 'from-emerald-400 to-teal-400',
-        glow: 'shadow-emerald-500/30',
-    },
-]
+import { FiArrowRight } from 'react-icons/fi'
+import { PROCESS_CONTENT } from '../constants'
 
 export default function ProcessFlow() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 })
@@ -67,13 +33,14 @@ export default function ProcessFlow() {
                     className="text-center"
                 >
                     <span className="inline-block px-4 py-1.5 bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold rounded-full uppercase tracking-widest mb-5">
-                        Our Approach
+                        {PROCESS_CONTENT.badge}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold font-['Outfit'] text-white mb-4">
-                        Systematic
-                        <span className="gradient-text"> Engineering Lifecycle</span>
+                        {PROCESS_CONTENT.titleMain}
+                        <span className="gradient-text">{PROCESS_CONTENT.titleHighlight}</span>
                     </h2>
                     <p className="text-white/55 max-w-xl mx-auto text-base">
+                        {PROCESS_CONTENT.description}
                     </p>
                 </motion.div>
 
@@ -83,7 +50,7 @@ export default function ProcessFlow() {
                     <div className="hidden lg:block absolute top-[4.5rem] left-[13%] right-[13%] h-0.5 bg-gradient-to-r from-blue-500/40 via-teal-400/60 to-emerald-400/40" />
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-                        {steps.map((step, index) => (
+                        {PROCESS_CONTENT.steps.map((step, index) => (
                             <motion.div
                                 key={step.id}
                                 initial={{ opacity: 0, y: 50 }}
@@ -110,7 +77,7 @@ export default function ProcessFlow() {
                                 </div>
 
                                 {/* Arrow for mobile */}
-                                {index < steps.length - 1 && (
+                                {index < PROCESS_CONTENT.steps.length - 1 && (
                                     <div className="lg:hidden flex justify-center my-3 text-teal-400/50">
                                         <FiArrowRight className="rotate-90 text-xl" />
                                     </div>
@@ -130,7 +97,7 @@ export default function ProcessFlow() {
                     <div className="inline-flex items-center gap-3 glass-card px-6 py-4">
                         <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                         <span className="text-white/70 text-sm">
-                            Focusing on precision, operational efficiency, and constructability
+                            {PROCESS_CONTENT.impactText}
                         </span>
                     </div>
                 </motion.div>
@@ -138,4 +105,5 @@ export default function ProcessFlow() {
         </section>
     )
 }
+
 

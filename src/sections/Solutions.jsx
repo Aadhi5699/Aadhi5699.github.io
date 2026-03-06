@@ -1,54 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import {
-    FiFileText, FiPieChart, FiSettings, FiLayers,
-    FiDatabase, FiActivity, FiArrowRight
-} from 'react-icons/fi'
-
-const solutions = [
-    {
-        icon: FiFileText,
-        title: 'Tender & RFQ Preparation',
-        description: 'Scope definition, conceptual treatment schemes, flow balance diagrams, and comprehensive technical specifications for tender documents.',
-        tag: 'Consultancy',
-        color: 'from-blue-500 to-cyan-400',
-    },
-    {
-        icon: FiPieChart,
-        title: 'Proposal Engineering',
-        description: 'Preparation of technical proposals, datasheets, power & chemical consumption lists, and essential drawings (P&ID, Layout, PFD).',
-        tag: 'Pre-Order',
-        color: 'from-teal-500 to-emerald-400',
-    },
-    {
-        icon: FiSettings,
-        title: 'Basic & Process Engineering',
-        description: 'Process design finalization, treatment schemes, hydraulic calculations, and detailed process flow diagrams (PFDs).',
-        tag: 'Process Tech',
-        color: 'from-cyan-500 to-blue-400',
-    },
-    {
-        icon: FiLayers,
-        title: 'Detailed Engineering',
-        description: 'Electro-mechanical engineering, P&IDs, equipment sizing, electrical SLDs, GA drawings, and comprehensive civil input drawings.',
-        tag: 'Implementation',
-        color: 'from-emerald-400 to-teal-500',
-    },
-    {
-        icon: FiDatabase,
-        title: 'Industrial Wastewater (ETP)',
-        description: 'Specialized treatment for Chemical, Pharmaceutical, Textile, Food & Beverage, and Solar Cell Manufacturing sectors.',
-        tag: 'Industrial',
-        color: 'from-blue-400 to-cyan-500',
-    },
-    {
-        icon: FiActivity,
-        title: 'Tertiary & ZLD Systems',
-        description: 'Advanced water reuse systems and Zero Liquid Discharge (ZLD) solutions for sustainable industrial operations.',
-        tag: 'Sustainability',
-        color: 'from-teal-400 to-cyan-500',
-    },
-]
+import { FiArrowRight } from 'react-icons/fi'
+import { SOLUTIONS_CONTENT } from '../constants'
 
 function SolutionCard({ solution, index }) {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -104,13 +57,14 @@ export default function Solutions() {
                     className="text-center"
                 >
                     <span className="inline-block px-4 py-1.5 bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold rounded-full uppercase tracking-widest mb-5">
-                        Our Expertise
+                        {SOLUTIONS_CONTENT.badge}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold font-['Outfit'] text-white mb-4">
-                        End-to-End
-                        <span className="gradient-text"> Engineering Consultancy</span>
+                        {SOLUTIONS_CONTENT.titleMain}
+                        <span className="gradient-text">{SOLUTIONS_CONTENT.titleHighlight}</span>
                     </h2>
                     <p className="text-white/55 max-w-2xl mx-auto text-base leading-relaxed">
+                        {SOLUTIONS_CONTENT.description}
                     </p>
                 </motion.div>
 
@@ -121,7 +75,7 @@ export default function Solutions() {
                         className="absolute inset-0 opacity-5 bg-[url('/images/filtration.png')] bg-cover bg-center rounded-3xl"
                     />
                     <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                        {solutions.map((solution, i) => (
+                        {SOLUTIONS_CONTENT.solutions.map((solution, i) => (
                             <SolutionCard key={solution.title} solution={solution} index={i} />
                         ))}
                     </div>
@@ -130,4 +84,5 @@ export default function Solutions() {
         </section>
     )
 }
+
 
