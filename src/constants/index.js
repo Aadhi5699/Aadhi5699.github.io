@@ -11,8 +11,24 @@ export const NAV_LINKS = [
     { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '#contact' },
 ]
-
 export const HERO_CONTENT = {
+    badge: '',
+
+    mainTitle: {
+        line1: 'Engineering Precision',
+        line2: 'for Water & Wastewater',
+        line3: 'Solutions',
+    },
+
+    subtext: '',
+
+    stats: [
+        { value: '11+', label: 'Industrial Sectors' },
+        { value: '2+', label: 'Countries Served' },
+        { value: '75+', label: 'Engineering Deliverables' },
+    ],
+}
+/* export const HERO_CONTENT = {
     badge: 'Leading Water Innovation Since 2025',
     mainTitle: {
         line1: 'Pure Water.',
@@ -26,7 +42,7 @@ export const HERO_CONTENT = {
         { value: '30+', label: 'Countries Served' },
         { value: '99.9%', label: 'Purity Rate' },
     ],
-}
+} */
 
 export const SOLUTIONS_CONTENT = {
     badge: 'Our Expertise',
@@ -120,7 +136,7 @@ export const STATISTICS_CONTENT = {
             decimal: 0,
         },
         {
-            value: 2,
+            value: 24,
             suffix: 'Hr',
             label: 'Responsive Support',
             sublabel: 'Average response time for queries',
@@ -131,40 +147,40 @@ export const STATISTICS_CONTENT = {
 
 export const PROCESS_CONTENT = {
     badge: 'Our Approach',
-    titleMain: 'Systematic',
-    titleHighlight: ' Engineering Lifecycle',
+    titleMain: 'Highlighted ',
+    titleHighlight: 'Engineering Assignments',
     description: '', // Empty in original
     impactText: 'Focusing on precision, operational efficiency, and constructability',
     steps: [
         {
             id: '01',
             icon: FiEdit3,
-            title: 'Concept & RFQ',
-            description: 'Conceptual treatment schemes, flow balance diagrams, and scope definition for precise RFQ preparation.',
+            title: 'Crescent Engineering FZE',
+            description: 'Post-order mechanical engineering and process support for refinery wastewater treatment systems.',
             color: 'from-blue-500 to-cyan-400',
             glow: 'shadow-blue-500/30',
         },
         {
             id: '02',
             icon: FiFileText,
-            title: 'Tender Engineering',
-            description: 'Technical proposal preparation, P&IDs, major BOQs, and detailed technical specifications for bidding.',
+            title: 'German-based Water & Wastewater EPC Contractor',
+            description: 'ETP & ZLD Proposal Engineering – Solar Cell Manufacturing Technical proposal preparation and process design.',
             color: 'from-teal-500 to-cyan-500',
             glow: 'shadow-teal-500/30',
         },
         {
             id: '03',
             icon: FiActivity,
-            title: 'Basic Engineering',
-            description: 'Treatment scheme finalization, hydraulic calculations, and comprehensive basic engineering documentation.',
+            title: 'Ion Exchange (India) Ltd',
+            description: 'Water & Effluent Treatment Basic Engineering Basic engineering documentation including CT and Boiler Blowdown Wastewater.',
             color: 'from-cyan-500 to-teal-400',
             glow: 'shadow-cyan-500/30',
         },
         {
             id: '04',
             icon: FiSettings,
-            title: 'Detailed Engineering',
-            description: 'Electro-mechanical engineering, GA drawings, electrical SLDs, and technical support during commissioning.',
+            title: 'Ion Exchange (India) Ltd',
+            description: 'Post order UF Skid Engineering and Piping BOQ,piping quantity estimation',
             color: 'from-emerald-400 to-teal-400',
             glow: 'shadow-emerald-500/30',
         },
@@ -181,19 +197,19 @@ export const TESTIMONIALS_CONTENT = {
             quote: 'An epitome of sincerity and commitment and with the decades of experience and knowledge in water and waste water technology, Vidhya will deliver value to her clients.',
             author: 'Sudheer Kumar M',
             designation: 'Head – Desalination',
-            company: 'Jakson Green Limited',
+            company: 'Jakson Green Limited,India',
         },
         {
             quote: 'R. Vidhya made a key contribution to the development of an energy-efficient CFRO brine concentration platform. Her innovative integration of energy recovery technology significantly improved system efficiency and demonstrated exceptional process engineering insight.',
             author: 'Richard Lindsay Stover',
             designation: 'CTO',
-            company: 'GP Water LLC',
+            company: 'GP Water LLC,USA',
         },
         {
-            quote: 'Her work on advanced reverse osmosis process design reflects strong innovation and engineering depth. The energy-saving approach she developed has practical impact across desalination and industrial water treatment applications.',
-            author: 'Richard Lindsay Stover',
-            designation: 'Former CTO',
-            company: 'Gradiant Corporation',
+            quote: 'We are extremely satisfied with the engineering consultancy services provided by the Precise WaterTek team for our refinery wastewater treatment project.Throughout the project, the team demonstrated a high level of professionalism, responsiveness, and a proactive approach to addressing technical challenges.',
+            author: 'Ravichandran',
+            designation: 'Technical Lead-Water Treatment',
+            company: 'Crescent Engineering FZE,UAE',
         },
     ],
 }
@@ -228,7 +244,7 @@ export const CONTACT_CONTENT = {
 export const FOOTER_CONTENT = {
     brandName: 'Precise',
     brandHighlight: 'WaterTek',
-    description: 'Pioneering advanced water technology solutions for a sustainable, water-secure future. Trusted by industries across 30+ countries.',
+    description: 'Pioneering advanced water and wastewater technology solutions for a sustainable, water-secure future.',
     copyright: '© 2025 Precise WaterTek. All rights reserved.',
     links: {
         Solutions: ['Water Treatment', 'Filtration Systems', 'Desalination', 'Smart Monitoring'],

@@ -31,10 +31,7 @@ function SolutionCard({ solution, index }) {
             <h3 className="text-white font-semibold text-lg mb-2 font-['Outfit']">{solution.title}</h3>
             <p className="text-white/55 text-sm leading-relaxed mb-5">{solution.description}</p>
 
-            {/* Link */}
-            <div className="flex items-center gap-2 text-teal-400 text-sm font-medium group-hover:gap-3 transition-all duration-200">
-                View Details <FiArrowRight className="text-xs" />
-            </div>
+
         </motion.div>
     )
 }

@@ -56,10 +56,10 @@ export default function ProcessFlow() {
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                                className="group"
+                                className="group h-full"
                             >
                                 {/* Card */}
-                                <div className="glass-card p-6 text-center relative overflow-hidden hover:border-teal-400/30">
+                                <div className="glass-card p-6 text-center relative overflow-hidden hover:border-teal-400/30 h-full flex flex-col">
                                     {/* Step number */}
                                     <div className="absolute top-4 right-4 text-white/10 text-5xl font-bold font-['Outfit'] leading-none">
                                         {step.id}
@@ -73,7 +73,7 @@ export default function ProcessFlow() {
                                     </div>
 
                                     <h3 className="text-white font-semibold text-base mb-2 font-['Outfit']">{step.title}</h3>
-                                    <p className="text-white/50 text-xs leading-relaxed">{step.description}</p>
+                                    <p className="text-white/50 text-xs leading-relaxed flex-grow">{step.description}</p>
                                 </div>
 
                                 {/* Arrow for mobile */}

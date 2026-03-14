@@ -5,6 +5,7 @@ import { CONTACT_CONTENT } from '../constants'
 export default function Contact() {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
 
+
     return (
         <section
             id="contact"
@@ -40,48 +41,38 @@ export default function Contact() {
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold font-['Outfit'] text-white mb-4">
                         {CONTACT_CONTENT.titleMain}
-                        <span className="gradient-text">{CONTACT_CONTENT.titleHighlight}</span>
+                        <span className="gradient-text"> {CONTACT_CONTENT.titleHighlight}</span>
                     </h2>
                 </motion.div>
 
-                <div className="flex flex-col items-center">
+                <div className="flex justify-center">
                     {/* Contact Info Panel */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={inView ? { opacity: 1, scale: 1 } : {}}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.7, delay: 0.2 }}
-                        className="w-full max-w-2xl space-y-4"
+                        className="w-full max-w-2xl"
                     >
-                        {/* Info panel */}
                         <div className="glass-card p-10">
                             <h3 className="text-white font-semibold text-2xl mb-8 font-['Outfit'] text-center">{CONTACT_CONTENT.panelTitle}</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="flex flex-col items-center gap-y-10">
                                 {CONTACT_CONTENT.info.map((item) => (
-                                    <a key={item.label} href={item.href} className="flex flex-col items-center text-center gap-4 group">
+                                    <a key={item.label} href={item.href} className="flex items-center gap-6 group w-full max-w-sm">
                                         <div className="w-14 h-14 rounded-2xl bg-teal-500/15 border border-teal-500/20 flex items-center justify-center flex-shrink-0 group-hover:bg-teal-500/25 transition-all duration-300 group-hover:scale-110">
                                             <item.icon className="text-teal-400" size={24} />
                                         </div>
                                         <div>
                                             <div className="text-white/40 text-xs mb-1 uppercase tracking-wider font-semibold">{item.label}</div>
-                                            <div className="text-white/80 text-sm group-hover:text-teal-300 transition-colors duration-200">{item.value}</div>
+                                            <div className="text-white/80 text-lg group-hover:text-teal-300 transition-colors duration-200">{item.value}</div>
                                         </div>
                                     </a>
                                 ))}
                             </div>
                         </div>
-
-                        {/* Status card - Kept as comment for reference if needed */}
-                        {/*  <div className="glass-card p-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                            <div className="flex items-center gap-3">
-                                <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
-                                <span className="text-white/70 text-sm">Our technical team is online</span>
-                            </div>
-                            <div className="hidden md:block w-px h-4 bg-white/10" />
-                            <p className="text-white/40 text-xs font-medium">Average response time: &lt; 2 hours</p>
-                        </div> */}
                     </motion.div>
                 </div>
             </div>
         </section>
     )
 }
+

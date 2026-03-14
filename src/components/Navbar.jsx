@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX } from 'react-icons/fi'
+import { FiMenu, FiX, FiLinkedin } from 'react-icons/fi'
 import { NAV_LINKS } from '../constants'
 
 export default function Navbar() {
@@ -27,15 +27,15 @@ export default function Navbar() {
                 {/* Logo */}
                 <a href="#" className="flex items-center gap-3 group">
                     <img
-                        src="/images/Final_logo_large_file.jpg.jpeg"
+                        src="public/images/ChatGPT Image Mar 14, 2026, 04_00_19 PM.png"
                         alt="Precise WaterTek Logo"
-                        className="h-10 w-auto rounded-lg shadow-lg shadow-teal-500/10 group-hover:scale-105 transition-transform duration-300"
+                        className="h-14 w-auto rounded-xl shadow-lg shadow-teal-500/10 group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="hidden sm:block">
-                        <span className="text-white font-bold text-lg leading-none tracking-tight font-['Outfit']">
+                        <span className="text-white font-bold text-2xl leading-none tracking-tight font-['Outfit']">
                             Precise
                         </span>
-                        <span className="text-teal-400 font-bold text-lg leading-none tracking-tight font-['Outfit']">
+                        <span className="text-teal-400 font-bold text-2xl leading-none tracking-tight font-['Outfit']">
                             {' '}WaterTek
                         </span>
                     </div>
@@ -55,13 +55,16 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                {/* CTA Button */}
+                {/* Social Icon */}
                 <div className="hidden md:flex items-center gap-4">
                     <a
-                        href="#contact"
-                        className="px-5 py-2.5 bg-gradient-to-r from-teal-500 to-cyan-500 text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-teal-500/30 hover:-translate-y-0.5 transition-all duration-300"
+                        href="https://www.linkedin.com/in/vidhya-r-1898b49a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjrBziJGbRCiH48d%2BsEj0ug%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-teal-400 hover:border-teal-400/40 hover:bg-teal-500/10 transition-all duration-300"
+                        title="LinkedIn"
                     >
-                        Get Started
+                        <FiLinkedin size={20} />
                     </a>
                 </div>
 
@@ -95,13 +98,18 @@ export default function Navbar() {
                                     {link.label}
                                 </a>
                             ))}
-                            <a
-                                href="#contact"
-                                onClick={() => setMenuOpen(false)}
-                                className="mt-2 px-5 py-2.5 bg-gradient-to-r from-teal-500 to-cyan-500 text-white text-sm font-semibold rounded-xl text-center"
-                            >
-                                Get Started
-                            </a>
+                            <div className="flex justify-center mt-2">
+                                <a
+                                    href="https://www.linkedin.com/in/vidhya-r-1898b49a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjrBziJGbRCiH48d%2BsEj0ug%3D%3D"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => setMenuOpen(false)}
+                                    className="w-full py-3 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center gap-2 text-white/80 hover:text-teal-400 transition-colors"
+                                >
+                                    <FiLinkedin size={18} />
+                                    <span>LinkedIn</span>
+                                </a>
+                            </div>
                         </div>
                     </motion.div>
                 )}
