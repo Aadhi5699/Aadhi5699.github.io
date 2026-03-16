@@ -17,6 +17,7 @@ function StatCard({ stat, index }) {
             <div className="text-4xl md:text-5xl font-bold gradient-text font-['Outfit'] mb-2">
                 {inView ? (
                     <>
+                        {stat.prefix}
                         <CountUp
                             end={stat.value}
                             duration={2.5}
@@ -25,7 +26,7 @@ function StatCard({ stat, index }) {
                         />
                         {stat.suffix}
                     </>
-                ) : `0${stat.suffix}`}
+                ) : `${stat.prefix || ''}0${stat.suffix || ''}`}
             </div>
             <div className="text-white font-semibold text-base mb-1">{stat.label}</div>
             <div className="text-white/40 text-xs">{stat.sublabel}</div>

@@ -42,10 +42,7 @@ export default function Footer() {
                     <p className="text-white/30 text-xs">
                         {FOOTER_CONTENT.copyright}
                     </p>
-                    <div className="flex gap-6">
-                        <a href="#" className="text-white/30 hover:text-white/60 text-xs transition-colors">Privacy Policy</a>
-                        <a href="#" className="text-white/30 hover:text-white/60 text-xs transition-colors">Terms of Service</a>
-                    </div>
+
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         className="w-8 h-8 rounded-lg bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400 hover:bg-teal-500 hover:text-white transition-all duration-300"

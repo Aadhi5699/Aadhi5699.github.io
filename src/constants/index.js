@@ -92,10 +92,10 @@ export const STATISTICS_CONTENT = {
             decimal: 0,
         },
         {
-            value: 95,
-            suffix: '%',
-            label: 'Water Reclamation',
-            sublabel: 'Achieving industry-leading reuse rates',
+            value: 75,
+            suffix: '+',
+            label: 'Engineering Deliverables',
+            sublabel: 'Achieving industry-leading rates',
             decimal: 0,
         },
         {
@@ -106,10 +106,11 @@ export const STATISTICS_CONTENT = {
             decimal: 0,
         },
         {
-            value: 100,
+            value: 95,
+            prefix: '>',
             suffix: '%',
-            label: 'Operational Efficiency',
-            sublabel: 'Optimized process & design cycles',
+            label: 'Schedule Adherence',
+            sublabel: 'Consistent on-time delivery of engineering milestones',
             decimal: 0,
         },
         {
@@ -163,8 +164,8 @@ export const PROCESS_CONTENT = {
         {
             id: '04',
             icon: FiSettings,
-            title: 'Ion Exchange (India) Ltd',
-            description: 'Post order UF Skid Engineering and Piping BOQ,piping quantity estimation',
+            title: 'Global Water Treatment Technology Provider',
+            description: 'Post order UF Skid Engineering including Piping Isometrics and Piping BOQ',
             color: 'from-emerald-400 to-teal-400',
             glow: 'shadow-emerald-500/30',
         },
