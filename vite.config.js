@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/precise-watertek/',
+  base: '/precise-waterTek/',
   server: {
     host: '0.0.0.0',
     port: 5173,
