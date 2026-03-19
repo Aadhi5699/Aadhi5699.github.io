@@ -14,19 +14,23 @@ function StatCard({ stat, index }) {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="glass-card p-8 text-center group cursor-default pulse-glow"
         >
-            <div className="text-4xl md:text-5xl font-bold gradient-text font-['Outfit'] mb-2">
+            <div className={`${typeof stat.value === 'string' ? 'text-3xl md:text-4xl' : 'text-4xl md:text-5xl'} font-bold gradient-text font-['Outfit'] mb-2`}>
                 {inView ? (
                     <>
                         {stat.prefix}
-                        <CountUp
-                            end={stat.value}
-                            duration={2.5}
-                            decimals={stat.decimal}
-                            delay={index * 0.1}
-                        />
+                        {typeof stat.value === 'number' ? (
+                            <CountUp
+                                end={stat.value}
+                                duration={2.5}
+                                decimals={stat.decimal}
+                                delay={index * 0.1}
+                            />
+                        ) : (
+                            stat.value
+                        )}
                         {stat.suffix}
                     </>
-                ) : `${stat.prefix || ''}0${stat.suffix || ''}`}
+                ) : `${stat.prefix || ''}${typeof stat.value === 'number' ? 0 : stat.value}${stat.suffix || ''}`}
             </div>
             <div className="text-white font-semibold text-base mb-1">{stat.label}</div>
             <div className="text-white/40 text-xs">{stat.sublabel}</div>
